@@ -2,6 +2,10 @@
 
 From https://github.com/python/pyperformance and other places.
 
+## Why
+
+These tests are designed to be run without Pyperformance. You can use whichever benchmarking tool you want.
+
 ## Running
 
 Using [GNU time](https://gnu.org/software/time/) command. Example:
@@ -18,7 +22,7 @@ Using [GNU time](https://gnu.org/software/time/) command. Example:
   CPU: 100%
 ```
 
-Using [hyperfine](https://github.com/sharkdp/hyperfine) app. Example:
+Using [Hyperfine](https://github.com/sharkdp/hyperfine) app. Example:
 
 ```
 hyperfine --warmup=3 --runs=3 -n=Python 'python bench/pystone.py'
