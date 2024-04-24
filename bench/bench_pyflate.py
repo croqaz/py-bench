@@ -681,7 +681,7 @@ def gzip_main(field):
     return "".join(out)
 
 
-def benchmark(filename, loops=3):
+def benchmark(filename, loops: int = 1):
     input_fp = open(filename, "rb")
     range_it = range(loops)
     t0 = time.monotonic()

@@ -363,9 +363,9 @@ def schedule():
             t = t.runTask()
 
 
-def benchmark(iterations=3):
+def benchmark(loops: int = 3):
 
-    for i in range(iterations):
+    for i in range(loops):
         taskWorkArea.holdCount = 0
         taskWorkArea.qpktCount = 0
 

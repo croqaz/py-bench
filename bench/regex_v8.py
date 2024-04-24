@@ -1693,7 +1693,7 @@ def block11():
 
 
 def benchmark(loops=10):
-    t0 = time.monotonic()
+    t0 = time.perf_counter()
     for loops in range(loops):
         block0()
         block1()
@@ -1707,7 +1707,7 @@ def benchmark(loops=10):
         block9()
         block10()
         block11()
-    return time.monotonic() - t0
+    return time.perf_counter() - t0
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ Artificial, floating point-heavy benchmark originally used by Factor.
 from math import sin, cos, sqrt
 
 
-POINTS = 100000
+POINTS = 100_000
 
 
 class Point(object):

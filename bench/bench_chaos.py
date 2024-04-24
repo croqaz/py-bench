@@ -15,7 +15,7 @@ import argparse
 DEFAULT_THICKNESS = 0.2
 DEFAULT_WIDTH = 256
 DEFAULT_HEIGHT = 256
-DEFAULT_ITERATIONS = 7500
+DEFAULT_ITERATIONS = 5000
 DEFAULT_RNG_SEED = 1234
 
 
@@ -270,15 +270,6 @@ def main(args):
 
     chaos = Chaosgame(splines, args.thickness)
     chaos.create_image_chaos(args.width, args.height, args.iterations, args.filename, args.rng_seed)
-
-
-def add_cmdline_args(cmd, args):
-    cmd.append("--width=%s" % args.width)
-    cmd.append("--height=%s" % args.height)
-    cmd.append("--thickness=%s" % args.thickness)
-    cmd.append("--rng-seed=%s" % args.rng_seed)
-    if args.filename:
-        cmd.extend(("--filename", args.filename))
 
 
 if __name__ == "__main__":

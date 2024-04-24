@@ -123,14 +123,14 @@ def init_benchmarks(n_values=None):
     return data
 
 
-def benchmark(loops=10):
+def benchmark(loops=5):
     if benchmark.data is None:
         benchmark.data = init_benchmarks()
     data = benchmark.data
 
     range_it = range(loops)
     search = re.search
-    t0 = time.monotonic()
+    t0 = time.perf_counter()
 
     for _ in range_it:
         # Runs all of the benchmarks for a given value of n.
@@ -147,7 +147,7 @@ def benchmark(loops=10):
             search(regex, string)
             search(regex, string)
 
-    return time.monotonic() - t0
+    return time.perf_counter() - t0
 
 
 # cached data, generated at the first call
@@ -156,6 +156,7 @@ benchmark.data = None
 
 if __name__ == "__main__":
     # "Test the performance of regexps using Fredik Lundh's benchmarks."
-    # USE_BYTES = True ?
+    benchmark()
+    USE_BYTES = True
     benchmark()
     print("OK")

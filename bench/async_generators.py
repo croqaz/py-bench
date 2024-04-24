@@ -35,8 +35,8 @@ def tree(input: range) -> Tree | None:
     return Tree(tree(input[:i]), input[i], tree(input[i + 1 :]))
 
 
-async def benchmark() -> None:
-    async for _ in tree(range(100000)):
+async def benchmark(loops: int = 100000) -> None:
+    async for _ in tree(range(loops)):
         pass
 
 
